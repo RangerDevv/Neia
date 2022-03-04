@@ -12,10 +12,7 @@ const choiceB = document.getElementById('choiceB');
 const choiceC = document.getElementById('choiceC');
 const choiceD = document.getElementById('choiceD');
 const playerhealth = document.getElementById('health');
+const playerlevel = document.getElementById('level');
 
 playerhealth.innerText = "Health: " + player.health;
-
-function healthdecline() {
-    player.health -= 10;
-    playerhealth.innerText = "Health: " + player.health;
-}
+playerlevel.innerText = "Level: " + player.level;
