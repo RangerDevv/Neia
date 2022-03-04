@@ -506,6 +506,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: flex;
 }
 
+.origin-bottom-right {
+  transform-origin: bottom right;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -526,6 +530,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   row-gap: 1.25rem;
 }
 
+.gap-y-4 {
+  row-gap: 1rem;
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -534,6 +542,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .text-6xl {
@@ -569,4 +587,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:text-5xl:hover {
   font-size: 3rem;
   line-height: 1;
+}
+
+.hover\:text-red-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
