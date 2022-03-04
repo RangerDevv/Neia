@@ -37,7 +37,7 @@ window.onload = function starttext() {
                             choiceA.innerHTML = "Yes";
                             choiceB.innerHTML = "No";
                             choiceB.onclick = function() {
-                                app.quit();
+                                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
                             }
                             choiceA.onclick = function() {
                                 textdialogue.innerHTML = "You are now ready to begin your journey.";
