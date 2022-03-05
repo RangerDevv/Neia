@@ -1,3 +1,4 @@
+import { PrisonDialogue } from "./game.js";
 const textdialogue = document.getElementById('container');
 const choiceA = document.getElementById('choiceA');
 const choiceB = document.getElementById('choiceB');

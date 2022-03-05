@@ -26,3 +26,7 @@ body {
   text-decoration: none;
 }
 
+#fightscene {
+  display: none;
+}
+

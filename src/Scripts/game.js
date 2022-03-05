@@ -1,7 +1,7 @@
 import * as enemy from './enemy.js';
 
 // Player stats
-export const player = {
+export var player = {
     name: "",
     health: 100,
     maxHealth: 100,
@@ -15,16 +15,46 @@ export const choiceA = document.getElementById('choiceA');
 export const choiceB = document.getElementById('choiceB');
 export const choiceC = document.getElementById('choiceC');
 export const choiceD = document.getElementById('choiceD');
-export const playerhealth = document.getElementById('health');
-export const playerlevel = document.getElementById('level');
+export let playerhealth = document.getElementById('health');
+export let playerlevel = document.getElementById('level');
 //boolean logics
 let Prison = true;
 let Sewers = false;
 
-playerhealth.innerText = "Health: " + player.health;
-playerlevel.innerText = "Level: " + player.level;
+window.onload = function start() {
+    textdialogue.innerText = "Are you ready to begin your journey?";
+    choiceA.innerText = "Yes";
+    choiceB.innerText = "No";
+    choiceA.onclick = function() {
+        choiceA.innerText = "";
+        choiceB.innerText = "";
+        PrisonDialogue();
+    }
+    choiceB.onclick = function() {
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
+}
 
-window.onload = function PrisonDialogue() {
+function Playerstats() {
+    //update the player stats
+    playerhealth.innerText = player.health;
+    playerlevel.innerText = player.level;
+    if (player.health <= 0) {
+        player.health = 0;
+        playerhealth.innerText = player.health;
+        textdialogue.innerText = "You have died, you can restart the game by clicking the restart button.";
+        choiceA.innerText = "Restart";
+        choiceA.onclick = function() {
+            PrisonDialogue();
+            player.health = 100;
+            playerhealth.innerText = player.health;
+        }
+    }
+}
+
+setInterval(Playerstats, 10);
+
+export function PrisonDialogue() {
     textdialogue.innerText = "You have woken up in a dark proson cell. The only thing that helps you see is a dim light bulb that is on the wall.";
     choiceA.innerText = "Continue";
     choiceA.onclick = function() {
@@ -91,6 +121,7 @@ function SewersDialogue() {
                 }
                 choiceB.onclick = function() {
                     textdialogue.innerText = "You run away, but you are too fast. The fire minion catches up to you and you die.";
+                    player.health = 0;
                     choiceA.innerText = "Restart";
                     choiceB.innerText = "";
                     choiceC.innerText = "";

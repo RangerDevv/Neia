@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class=" text-white flex gap-x-24 justify-center">
-        <p id="health" class=" text-red-600">health:</p>
+        <p id="health" class=" text-red-600"></p>
         <p id="level" class=" text-cyan-400">level:</p>
         <a href="./index.html" id="Menu" class=" text-yellow-400">Menu</a>
     </div>
@@ -21,6 +21,33 @@
         <button  id="choiceC" class=" text-xl hover:text-red-600"></button>
         <button id="choiceD" class=" text-xl hover:text-red-600"></button>
       </div>
+    </div>
+    <div id="fightscene">
+    <div class=" flex flex-row text-lg justify-center gap-x-44 py-16">
+    <div class=" flex justify-center text-white">
+        <div id="Player" class=" flex flex-col text-center">
+            <p>You</p>
+            <p id="health">Health</p>
+            <button><p>Abilities</p></button>
+            <button><p>Attack</p></button>
+            <button><p>Defend</p></button>
+            <button><p>Rest</p></button>
+        </div>
+    </div>
+    <div>
+    <div class=" flex justify-center text-white">
+        <div id="Player" class=" flex flex-col text-center">
+            <p id="EnemyName">Enemy</p>
+            <p id="enemyhealth"></p>
+            <p id="EnemyType">Type:</p>
+            <p>Attacks</p>
+            <p id="Attack1">FireBlaze</p>
+            <p id="Attack2">TrailBreath</p>
+            <p id="Attack3">Somber</p>
+        </div>
+    </div>
+</div>
+    </div>
     </div>
   </body>
   <script type="module" src="./Scripts/game.js"></script>
