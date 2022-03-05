@@ -1,11 +1,13 @@
 import * as enemy from './enemy.js';
 
 // Player stats
-var player = {
+const player = {
     name: "",
     health: 100,
     maxHealth: 100,
     level: 1,
+    attack: 15,
+    Boolean: true,
 }
 // calling the HTML elements
 const textdialogue = document.getElementById('container');
@@ -84,6 +86,8 @@ function SewersDialogue() {
                 choiceA.innerText = "Fight";
                 choiceB.innerText = "Run";
                 choiceA.onclick = function() {
+                    //initiate the fight
+                    enemy.fire_minion();
                 }
                 choiceB.onclick = function() {
                     textdialogue.innerText = "You run away, but you are too fast. The fire minion catches up to you and you die.";
