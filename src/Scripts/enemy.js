@@ -5,35 +5,35 @@ const fire_enemy = {
     attack: 10,
 }
 
+// get the player
+import {player,textdialogue,choiceA,choiceB} from './game.js';
+
 export function fire_minion() {
-    if(player.Boolean == true) {
-        player.health = player.health - fire_enemy.attack;
-        textdialogue.innerText = "The minion attacks you.";
-        player.Boolean = false;
+    if(player.fight == true) {
+        fire_minion_attack();
+        player.fight = false;
     }
     else {
-    textdialogue.innerText = "You fight the fire minion, what is your move?";
-    choiceA.innerText = "Rest";
-    choiceB.innerText = "Attack";
-    choiceA.onclick = function() {
-        textdialogue.innerText = "You rest and regain some health.";
-        player.health = player.health + 10;
-    }
-    choiceB.onclick = function() {
-        textdialogue.innerText = "You attack the minion.";
-        fire_enemy.health = fire_enemy.health - player.attack;
-    }
-    }
-    if(fire_enemy.health <= 0) {
-        textdialogue.innerText = "You killed the fire minion. you advance to level 2.";
-        player.level = player.level + 1;
-        choiceA.innerText = "Continue";
-        choiceA.onclick = function() {
-            textdialogue.innerText = "You continue on your way.";
+        function player() {
+            choiceA.innerText = "Attack";
+            choiceB.innerText = "Rest";
+            choiceA.onclick = function() {
+                textdialogue.innerText = "You attack the enemy.";
+                player_attack();
+            }
+            choiceB.onclick = function() {
+                player_rest();
+            }
+            player.fight = true;
         }
     }
-    if(player.health <= 0) {
-        textdialogue.innerText = "You died.";
-    }
-}
-                
+    function fire_minion_attack() {
+        player.health -= fire_enemy.attack;
+        }
+    function player_attack() {
+        fire_enemy.health -= player.attack;
+        }
+    function player_rest() {
+        player.health += 5;
+        }
+    }           

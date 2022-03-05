@@ -1,22 +1,22 @@
 import * as enemy from './enemy.js';
 
 // Player stats
-const player = {
+export const player = {
     name: "",
     health: 100,
     maxHealth: 100,
     level: 1,
     attack: 15,
-    Boolean: true,
+    fight: true,
 }
 // calling the HTML elements
-const textdialogue = document.getElementById('container');
-const choiceA = document.getElementById('choiceA');
-const choiceB = document.getElementById('choiceB');
-const choiceC = document.getElementById('choiceC');
-const choiceD = document.getElementById('choiceD');
-const playerhealth = document.getElementById('health');
-const playerlevel = document.getElementById('level');
+export const textdialogue = document.getElementById('container');
+export const choiceA = document.getElementById('choiceA');
+export const choiceB = document.getElementById('choiceB');
+export const choiceC = document.getElementById('choiceC');
+export const choiceD = document.getElementById('choiceD');
+export const playerhealth = document.getElementById('health');
+export const playerlevel = document.getElementById('level');
 //boolean logics
 let Prison = true;
 let Sewers = false;
@@ -91,10 +91,18 @@ function SewersDialogue() {
                 }
                 choiceB.onclick = function() {
                     textdialogue.innerText = "You run away, but you are too fast. The fire minion catches up to you and you die.";
+                    choiceA.innerText = "Restart";
+                    choiceB.innerText = "";
+                    choiceC.innerText = "";
+                    choiceD.innerText = "";
+                    choiceA.onclick = function() {
+                        PrisonDialogue();
+                    }
                 }
             }
         }
         choiceB.onclick = function() {
+            textdialogue.innerText = "You slip through the bars, you see the sunlight for the first time in a long time. ";
         }
     }
 }
