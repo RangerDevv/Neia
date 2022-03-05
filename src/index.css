@@ -30,3 +30,8 @@ body {
   display: none;
 }
 
+/*  hide the scroll bar but keep the functionality  */
+::-webkit-scrollbar {
+  display: none;
+}
+

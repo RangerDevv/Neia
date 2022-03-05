@@ -41,10 +41,6 @@ window.onload = function starttext() {
                                 window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
                             }
                             choiceA.onclick = function() {
-                                textdialogue.innerText = "You are now ready to begin your journey.";
-                                choiceB.innerText = "";
-                                choiceA.innerText = "Lets go!";
-                                choiceA.onclick = function() {
                                     window.location.href = "game.html";
                                 }
                             }
@@ -58,4 +54,3 @@ window.onload = function starttext() {
     }
     }
     }
-}

@@ -42,7 +42,7 @@ function Playerstats() {
     if (player.health <= 0) {
         player.health = 0;
         playerhealth.innerText = player.health;
-        textdialogue.innerText = "You have died, you can restart the game by clicking the restart button.";
+        textdialogue.innerText = "You have died, This is most likely because you made a bad choice or you lost the fight. Restart if you want to.";
         choiceA.innerText = "Restart";
         choiceA.onclick = function() {
             PrisonDialogue();
@@ -120,7 +120,7 @@ function SewersDialogue() {
                     enemy.fire_minion();
                 }
                 choiceB.onclick = function() {
-                    textdialogue.innerText = "You run away, but you are too fast. The fire minion catches up to you and you die.";
+                    textdialogue.innerText = "You run away, but you are too slow. The fire minion catches up to you and you die.";
                     player.health = 0;
                     choiceA.innerText = "Restart";
                     choiceB.innerText = "";
