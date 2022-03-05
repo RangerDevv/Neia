@@ -1,0 +1,1 @@
+// make an enemy which attacks the player

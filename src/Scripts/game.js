@@ -1,3 +1,5 @@
+import * as enemy from './enemy.js';
+
 // Player stats
 var player = {
     name: "",
@@ -66,6 +68,29 @@ function SewersDialogue() {
     textdialogue.innerText = "You enter the sewers, you are greeted with a very bad smell. Now, all you have to do is find a way out.";
     choiceA.innerText = "Keep Going";
     choiceA.onclick = function() {
-        textdialogue.innerText = "You keep going until you reach the end of the sewer. You see a small light, it looks like it leads to the outside.";
+        textdialogue.innerText = "You keep going until you reach the end of the sewer. You see a small light, it looks like it leads to the outside. You can slip right through the bars and get out, or you can explore the sewer.";
+        choiceA.innerText = "Explore the sewer";
+        choiceB.innerHTML = "Slip through the bars";
+        choiceA.onclick = function() {
+            textdialogue.innerText = "You walk the opposite direction, then you take a left and find yourself in a 2 paths leading in 2 different directions. Path 1 has a cold air coming from it. The other path has hot air coming from it. You can either go left or right.";
+            choiceA.innerText = "Go left";
+            choiceB.innerText = "Go right";
+            choiceA.onclick = function() {
+                textdialogue.innerText = "You go left, its a long walk but you finally reach the end of the sewer. You see a small light, it looks like it leads to the outside. You can slip right through the bars and get out, or you can explore the sewer by going back to the intersection and going right.";
+                choiceA.innerText = "get out";
+            }
+            choiceB.onclick = function() {
+                textdialogue.innerText = "You go right, a very short walk after you reach a dead end. Suddenly you hear a loud noise. You turn around and see a fire minion. That explains the hot air. You have no other choice but to fight it.";
+                choiceA.innerText = "Fight";
+                choiceB.innerText = "Run";
+                choiceA.onclick = function() {
+                }
+                choiceB.onclick = function() {
+                    textdialogue.innerText = "You run away, but you are too fast. The fire minion catches up to you and you die.";
+                }
+            }
+        }
+        choiceB.onclick = function() {
+        }
     }
 }
