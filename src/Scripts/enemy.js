@@ -2,11 +2,11 @@ const fire_minion = {
     name: "Fire Minion",
     health: 30,
     maxHealth: 30,
-    attack: 10,
+    attack: 20,
 }
 
 // get the player
-import {player,textdialogue,choiceA,choiceB, playerattack, playerdefend , playerheal, Playerchoice, FightScene, Dialogue , enemyhealth} from './game.js';
+import {player,textdialogue,choiceA,choiceB, playerattack, playerdefend , playerheal, Playerchoice, FightScene, Dialogue , enemyhealth, PrisonDialogue} from './game.js';
 
 export function fight() {
     FightScene.style.display = "block";

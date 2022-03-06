@@ -150,5 +150,5 @@ function SewersDialogue() {
 }
 
 function outsideWorld() {
-
+    textdialogue.innerText = "You have reached the outside world. Its pretty out here, you can see the sun shining through the trees. You can either go left or right.";
 }
