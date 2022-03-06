@@ -20,6 +20,7 @@ export const playerdefend = document.getElementById('Defend');
 export const Playerchoice = document.getElementById('PlayerFight');
 export const FightScene = document.getElementById('fightscene');
 export const enemyhealth = document.getElementById('enemyhealth');
+export const FightDialogue = document.getElementById('fightdialogue');
 export const Dialogue = document.getElementById('Dialogue');
 export let playerhealth = document.getElementById('health');
 export let playerlevel = document.getElementById('level');

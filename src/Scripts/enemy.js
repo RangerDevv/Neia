@@ -6,7 +6,7 @@ const fire_minion = {
 }
 
 // get the player
-import {player,textdialogue,choiceA,choiceB, playerattack, playerdefend , playerheal, Playerchoice, FightScene, Dialogue , enemyhealth, PrisonDialogue} from './game.js';
+import {player,textdialogue,choiceA,choiceB, playerattack, playerdefend , playerheal, Playerchoice, FightScene, Dialogue , enemyhealth, PrisonDialogue, FightDialogue} from './game.js';
 
 export function fight() {
     FightScene.style.display = "block";
@@ -19,6 +19,7 @@ export function fight() {
         playerattacks();
         Playerchoice.style.display = "none";
         enemyhealth.innerText = fire_minion.health;
+        FightDialogue.innerText = "You attacked the " + fire_minion.name + " for " + player.attack + " damage!";
         // wait for 1 second and then call fire_minion_attack
         setTimeout(fire_minion_attack, 1000);
     }
@@ -26,6 +27,7 @@ export function fight() {
         playerheals();
         Playerchoice.style.display = "none";
         enemyhealth.innerText = fire_minion.health;
+        FightDialogue.innerText = "You healed yourself for 15 health!";
         // wait for 1 second and then call fire_minion_attack
         setTimeout(fire_minion_attack, 1000);
     }
@@ -33,6 +35,7 @@ export function fight() {
         playerdefends();
         Playerchoice.style.display = "none";
         enemyhealth.innerText = fire_minion.health;
+        FightDialogue.innerText = "You defended yourself!";
         // wait for 1 second and then call fire_minion_attack
         setTimeout(fire_minion_attack, 1000);
     }
@@ -48,6 +51,7 @@ export function fight() {
     function fire_minion_attack() {
     player.health -= fire_minion.attack;
     Playerchoice.style.display = "block";
+    FightDialogue.innerText = "The " + fire_minion.name + " attacked you for " + fire_minion.attack + " damage!";
     }
     function checkplayerdeath() {
         if(player.health <= 0) {
@@ -69,6 +73,7 @@ export function fight() {
             FightScene.style.display = "none";
             Dialogue.style.display = "block";
             fire_minion.health = 0;
+            player.level += 1;
         }
     }
 }

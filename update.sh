@@ -1,5 +1,5 @@
 #bin/bash
 
 git add .
-git commit -m "Bug Fixes"
+git commit -m "added stats during battle!"
 git push 
