@@ -14,14 +14,14 @@ export function fight() {
     playerattack.InnerText = "Attack";
     PlayerStamina1.innerText = player.stamina;
     PlayerStamina2.innerText = player.stamina;
-    enemyhealth.innerText = fire_minion.health;
+    enemyhealth.innerText = "Health: "+fire_minion.health;
     playerheal.InnerText = "Heal";
     playerdefend.InnerText = "Defend";
     textdialogue.InnerText = "You have encountered a " + fire_minion.name + "!";
     playerkick.onclick = function() {
         playerkicks();
         Playerchoice.style.display = "none";
-        enemyhealth.innerText = fire_minion.health;
+        enemyhealth.innerText = "Health: " + fire_minion.health;
         FightDialogue.innerText = "You kicked the " + fire_minion.name + "!";
         PlayerStamina1.innerText = player.stamina;
         PlayerStamina2.innerText = player.stamina;
@@ -33,7 +33,7 @@ export function fight() {
     playerplasma.onclick = function() {
         playerplasmas();
         Playerchoice.style.display = "none";
-        enemyhealth.innerText = fire_minion.health;
+        enemyhealth.innerText = "Health: " + fire_minion.health;
         FightDialogue.innerText = "You have used plasma! -50 energy and 60 damage!";
         PlayerStamina1.innerText = player.stamina;
         PlayerStamina2.innerText = player.stamina;
@@ -45,7 +45,7 @@ export function fight() {
     playerattack.onclick = function() {
         playerattacks();
         Playerchoice.style.display = "none";
-        enemyhealth.innerText = fire_minion.health;
+        enemyhealth.innerText = "Health: " + fire_minion.health;
         FightDialogue.innerText = "You attacked the " + fire_minion.name + " for " + player.attack + " damage!";
         PlayerStamina1.innerText = player.stamina;
         PlayerStamina2.innerText = player.stamina;
@@ -57,7 +57,7 @@ export function fight() {
     playerheal.onclick = function() {
         playerheals();
         Playerchoice.style.display = "none";
-        enemyhealth.innerText = fire_minion.health;
+        enemyhealth.innerText = "Health: " + fire_minion.health;
         FightDialogue.innerText = "You healed yourself for 15 health and 10 stamina!";
         PlayerStamina1.innerText = player.stamina;
         PlayerStamina2.innerText = player.stamina;
@@ -69,7 +69,7 @@ export function fight() {
     playerdefend.onclick = function() {
         playerdefends();
         Playerchoice.style.display = "none";
-        enemyhealth.innerText = fire_minion.health;
+        enemyhealth.innerText = "Health: " + fire_minion.health;
         FightDialogue.innerText = "You defended yourself!";
         PlayerStamina1.innerText = player.stamina;
         PlayerStamina2.innerText = player.stamina;

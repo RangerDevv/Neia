@@ -47,9 +47,9 @@ window.onload = function start() {
 
 function Playerstats() {
     //update the player stats
-    playerhealth.innerText = player.health;
-    playerlevel.innerText = player.level;
-    PlayerStamina1.innerText = player.stamina;
+    playerhealth.innerText = "Health: " + player.health;
+    playerlevel.innerText = "Level: " + player.level;
+    PlayerStamina1.innerText = "Stamina: " + player.stamina;
     if (player.health <= 0) {
         player.health = 0;
         playerhealth.innerText = player.health;
@@ -66,7 +66,7 @@ function Playerstats() {
 setInterval(Playerstats, 10);
 
 export function PrisonDialogue() {
-    textdialogue.innerText = "You have woken up in a dark proson cell. The only thing that helps you see is a dim light bulb that is on the wall.";
+    textdialogue.innerText = "You have woken up in a dark prison cell. The only thing that helps you see is a dim light bulb that is on the wall.";
     choiceA.innerText = "Continue";
     choiceA.onclick = function() {
         textdialogue.innerText = "You have to get out of here. Find a way out of here.";
@@ -93,7 +93,7 @@ export function PrisonDialogue() {
                 textdialogue.innerText = "You can stay in here forever, get out of here.";
             }
             choiceA.onclick = function() {
-                textdialogue.innerText = "You enter the hole and you see a a a tiny light. You crawl faster and, you were right! It did lead to the sewers.";
+                textdialogue.innerText = "You enter the hole and you see a tiny light. You crawl faster and, you were right! It did lead to the sewers.";
                 choiceA.innerText = "Continue";
                 choiceB.innerText = "";
                 choiceC.innerText = "";
@@ -153,10 +153,21 @@ function SewersDialogue() {
         }
         choiceB.onclick = function() {
             textdialogue.innerText = "You slip through the bars, you see the sunlight for the first time in a long time. ";
+            choiceA.innerText = "Continue";
+            choiceB.innerText = "";
+            choiceC.innerText = "";
+            choiceD.innerText = "";
+            choiceA.onclick = function() {
+                outsideWorld();
+            }
         }
     }
 }
 
 function outsideWorld() {
-    textdialogue.innerText = "You have reached the outside world. Its pretty out here, you can see the sun shining through the trees. You can either go left or right.";
+    textdialogue.innerText = "You have reached the outside world. Its pretty out here, you can see the sun shining through the trees.";
+    choiceA.innerText = "Continue";
+    choiceA.onclick = function() {
+        textdialogue.innerText = "You continue walking, you see people walking around, You smell ";
+    }
 }
