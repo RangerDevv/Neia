@@ -5,6 +5,8 @@ export var player = {
     name: "",
     health: 100,
     maxHealth: 100,
+    stamina: 100,
+    maxStamina: 100,
     level: 1,
     attack: 15,
 }
@@ -17,7 +19,11 @@ export const choiceD = document.getElementById('choiceD');
 export const playerattack = document.getElementById('Attack');
 export const playerheal = document.getElementById('Heal');
 export const playerdefend = document.getElementById('Defend');
+export const playerkick = document.getElementById('Kick');
+export const playerplasma = document.getElementById('Plasma');
 export const Playerchoice = document.getElementById('PlayerFight');
+export const PlayerStamina1 = document.getElementById('Stamina1');
+export const PlayerStamina2 = document.getElementById('Stamina2');
 export const FightScene = document.getElementById('fightscene');
 export const enemyhealth = document.getElementById('enemyhealth');
 export const FightDialogue = document.getElementById('fightdialogue');
@@ -43,6 +49,7 @@ function Playerstats() {
     //update the player stats
     playerhealth.innerText = player.health;
     playerlevel.innerText = player.level;
+    PlayerStamina1.innerText = player.stamina;
     if (player.health <= 0) {
         player.health = 0;
         playerhealth.innerText = player.health;
