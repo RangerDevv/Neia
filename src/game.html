@@ -12,7 +12,7 @@
         <p id="level" class=" text-cyan-400">level:</p>
         <a href="./index.html" id="Menu" class=" text-yellow-400">Menu</a>
     </div>
-    <div class=" flex justify-center py-6">
+    <div id="Dialogue" class=" flex justify-center py-6">
       <div class=" text-white flex flex-col items-center gap-y-4">
         <div><img src="./Images/PlaceHolder.png"></div>
         <div><p id="container" class=" text-2xl">Place Holder Text Here!</p></div>
@@ -28,22 +28,24 @@
         <div id="Player" class=" flex flex-col text-center">
             <p>You</p>
             <p id="health">Health</p>
-            <button><p>Abilities</p></button>
-            <button><p>Attack</p></button>
-            <button><p>Defend</p></button>
-            <button><p>Rest</p></button>
+            <p>Abilities</p>
+            <div id="PlayerFight" class="">
+                <button id="Attack"><p>Attack</p></button>
+                <button id="Defend"><p>Defend</p></button>
+                <button id="Heal"><p>Rest</p></button>
+            </div>
         </div>
     </div>
     <div>
     <div class=" flex justify-center text-white">
         <div id="Player" class=" flex flex-col text-center">
             <p id="EnemyName">Enemy</p>
-            <p id="enemyhealth"></p>
+            <p id="enemyhealth">Health</p>
             <p id="EnemyType">Type:</p>
             <p>Attacks</p>
-            <p id="Attack1">FireBlaze</p>
-            <p id="Attack2">TrailBreath</p>
-            <p id="Attack3">Somber</p>
+            <p>FireBlaze</p>
+            <p>TrailBreath</p>
+            <p>Somber</p>
         </div>
     </div>
 </div>

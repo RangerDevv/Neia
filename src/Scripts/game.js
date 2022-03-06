@@ -7,7 +7,6 @@ export var player = {
     maxHealth: 100,
     level: 1,
     attack: 15,
-    fight: true,
 }
 // calling the HTML elements
 export const textdialogue = document.getElementById('container');
@@ -15,11 +14,15 @@ export const choiceA = document.getElementById('choiceA');
 export const choiceB = document.getElementById('choiceB');
 export const choiceC = document.getElementById('choiceC');
 export const choiceD = document.getElementById('choiceD');
+export const playerattack = document.getElementById('Attack');
+export const playerheal = document.getElementById('Heal');
+export const playerdefend = document.getElementById('Defend');
+export const Playerchoice = document.getElementById('PlayerFight');
+export const FightScene = document.getElementById('fightscene');
+export const enemyhealth = document.getElementById('enemyhealth');
+export const Dialogue = document.getElementById('Dialogue');
 export let playerhealth = document.getElementById('health');
 export let playerlevel = document.getElementById('level');
-//boolean logics
-let Prison = true;
-let Sewers = false;
 
 window.onload = function start() {
     textdialogue.innerText = "Are you ready to begin your journey?";
@@ -117,7 +120,15 @@ function SewersDialogue() {
                 choiceB.innerText = "Run";
                 choiceA.onclick = function() {
                     //initiate the fight
-                    enemy.fire_minion();
+                    enemy.fight();
+                    textdialogue.innerText = "You have defeated the fire minion, you decide its better to go outside. But, you have also leveled up!";
+                    choiceA.innerText = "Go outside";
+                    choiceB.innerText = "";
+                    choiceC.innerText = "";
+                    choiceD.innerText = "";
+                    choiceA.onclick = function() {
+                        outsideWorld();
+                    }
                 }
                 choiceB.onclick = function() {
                     textdialogue.innerText = "You run away, but you are too slow. The fire minion catches up to you and you die.";
@@ -136,4 +147,8 @@ function SewersDialogue() {
             textdialogue.innerText = "You slip through the bars, you see the sunlight for the first time in a long time. ";
         }
     }
+}
+
+function outsideWorld() {
+
 }

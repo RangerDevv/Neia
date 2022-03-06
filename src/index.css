@@ -26,8 +26,15 @@ body {
   text-decoration: none;
 }
 
+#Dialogue {
+  display: block;
+}
+
 #fightscene {
-  display: none;
+  display: none
+}
+#PlayerFight {
+  display: block;
 }
 
 /*  hide the scroll bar but keep the functionality  */
