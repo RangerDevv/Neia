@@ -9,9 +9,9 @@
   <body>
     <div class=" text-white flex gap-x-24 justify-center text-center">
         <p id="health" class=" text-red-600"></p>
-        <p id="level" class=" text-cyan-400">level:</p>
-        <p id="Stamina1" class=" text-green-600">stamina:</p>
-        <a href="./index.html" id="Menu" class=" text-yellow-400">Menu</a>
+        <p id="level" class=" text-cyan-400">Level:</p>
+        <p id="Stamina1" class=" text-green-600">Stamina:</p>
+        <p id="Money" class=" text-blue-600">Money</p>
     </div>
     <div id="Dialogue" class=" flex justify-center py-6 text-center">
       <div class=" text-white flex flex-col items-center gap-y-4">
@@ -24,22 +24,24 @@
       </div>
     </div>
     <div id="fightscene">
-        <div class=" flex justify-center text-white text-2xl">
+        <div class=" flex justify-center text-white text-2xl py-16">
            <p id="fightdialogue">Let The Battle Begin!</p>
         </div>
     <div class=" flex flex-row text-lg justify-center gap-x-44 py-16">
     <div class=" flex justify-center text-white">
         <div id="Player" class=" flex flex-col text-center">
             <p>You</p>
-            <p id="health">Health</p>
+            <p id="health2">Health</p>
             <p id="Stamina2">Stamina</p>
             <p>Abilities</p>
             <div id="PlayerFight" class="">
-                <button id="Attack"><p>Punch</p></button>
-                <button id="Kick"><p>Kick</p></button>
-                <button id="Plasma"><p>Plasma Ball</p></button>
-                <button id="Defend"><p>Defend</p></button>
-                <button id="Heal"><p>Rest</p></button>
+                <div class=" flex flex-col">
+                    <button id="Attack"><p>Punch</p></button>
+                    <button id="Kick"><p>Kick</p></button>
+                    <button id="Plasma"><p>Plasma Ball</p></button>
+                    <button id="Defend"><p>Defend</p></button>
+                    <button id="Heal"><p>Rest</p></button>
+                </div>
             </div>
         </div>
     </div>
@@ -48,7 +50,6 @@
         <div id="Player" class=" flex flex-col text-center">
             <p id="EnemyName">Enemy</p>
             <p id="enemyhealth">Health</p>
-            <p id="EnemyType">Type:</p>
             <p>Attacks</p>
             <p>FireBlaze</p>
             <p>TrailBreath</p>
