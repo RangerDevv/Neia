@@ -142,6 +142,7 @@ function SewersDialogue() {
                 choiceA.onclick = function() {
                     //initiate the fight
                     enemy.fight();
+                    player.level = player.level + 1;
                     textdialogue.innerText = "You have defeated the fire minion, you decide its better to go outside. But, you have also leveled up!";
                     choiceA.innerText = "Go outside";
                     choiceB.innerText = "";
