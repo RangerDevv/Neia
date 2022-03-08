@@ -311,5 +311,41 @@ function outsidebattle() {
 }
 
 function hotel() {
-    textdialogue.innerText = "Its night time. You decide it would be best to stay in the hotel. You are tired and you are hungry. Sadly you dont have enough money to afford the food at the hotel.";
+    textdialogue.innerText = "Its night time. You decide it would be best to stay in the hotel. You are tired and you are hungry. Sadly you dont have enough money to afford the food at the hotel. Your stamina goes down by 15.";
+    player.stamina = player.stamina - 15;
+    choiceA.innerText = "Continue";
+    choiceB.innerText = "";
+    choiceC.innerText = "";
+    choiceA.onclick = function() {
+        textdialogue.innerText = "You try to talk to the manager and convince him to let you stay hotel for free. He says he will let you stay for free if you are ready to spend the night in the hotel's basement. You have no choice but to stay in the basement, since you dont want to fight another enemy and die.";
+        choiceA.innerText = "Stay in the basement";
+        choiceB.innerText = "";
+        choiceA.onclick = function() {
+            textdialogue.innerText = "The manager takes you to the basement. Its pretty dark in here. there are 2 light bulbs in the center of the room. The manager tell you that he will lock the door for 'safety' reasons. The only time he will open it is at 4AM in the morning.";
+            choiceA.innerText = "Continue";
+            choiceB.innerText = "";
+            choiceA.onclick = function() {
+                textdialogue.innerText = "You approach the bed in the corner. You lay on it and try to have a good sleep. Its not a very comfortable bed but you still manage to sleep.";
+                choiceA.innerText = "Continue";
+                choiceB.innerText = "";
+                choiceA.onclick = function() {
+                    textdialogue.innerText = "You wake up at 4AM. You are still in the basement. You are not sure if you are being watched.";
+                    choiceA.innerText = "Continue";
+                    choiceB.innerText = "";
+                    choiceA.onclick = function() {
+                        textdialogue.innerText = "The manager opens the door for you. You are now outside the hotel. Suddenly you hear a loud noise. You are not sure if it is a shadow or a shadow figure.";
+                        choiceA.innerText = "Continue";
+                        choiceB.innerText = "";
+                        choiceA.onclick = function() {
+                            textdialogue.innerText = "The manager turns himself into a black goblin who seems extremely angry. He attacks you.";
+                            choiceA.innerText = "Fight";
+                            choiceA.onclick = function() {
+                                enemy.shadowgoblin();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
