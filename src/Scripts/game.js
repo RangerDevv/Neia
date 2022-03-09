@@ -1,7 +1,7 @@
 import * as enemy from './enemy.js';
 
 // Player stats
-export var player = {
+export let player = {
     name: "",
     health: 100,
     maxHealth: 100,
@@ -10,6 +10,7 @@ export var player = {
     level: 1,
     attack: 15,
     Money: 0,
+    fighting: false,
 }
 // calling the HTML elements
 export const textdialogue = document.getElementById('container');

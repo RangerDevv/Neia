@@ -1,29 +1,44 @@
-const fire_minion = {
+export const fire_minion = {
     name: "Fire Minion",
     health: 30,
     maxHealth: 30,
     attack: 20,
 }
 
-const shadow_figure = {
+export const shadow_figure = {
     name: "Shadow Figure",
     health: 40,
     maxHealth: 40,
     attack: 25,
 }
 
-const shadow_goblin = {
+export const shadow_goblin = {
     name: "Shadow Goblin",
     health: 200,
     maxHealth: 200,
     attack: 60,
 }
 
+setTimeout(() => {
+    playerhealth2.innerText = "Health: " + player.health;
+    health.innerText = "Health: " + player.health;
+    PlayerStamina1.innerText = "Stamina: " + player.stamina;
+    PlayerStamina2.innerText = "Stamina: " + player.stamina;
+}, 100);
 // get the player
 import {player,textdialogue,choiceA, playerattack, playerdefend, playerheal, Playerchoice, FightScene, Dialogue, enemyhealth, PrisonDialogue, FightDialogue, playerkick, playerplasma, PlayerStamina1 , PlayerStamina2, playerhealth2} from './game.js';
 
+
+setInterval(() => {
+    playerhealth2.innerText = "Health: " + player.health;
+    health.innerText = "Health: " + player.health;
+    PlayerStamina1.innerText = "Stamina: " + player.stamina;
+    PlayerStamina2.innerText = "Stamina: " + player.stamina;
+}, 100);
+
+
 export function fight() {
-    fire_minion.health = 30;
+    // once the enemy is dead reset the fight scene
     player.stamina = 100;
     player.health = 100;
     playerhealth2.innerText = "Health: " + player.health;
@@ -111,7 +126,6 @@ export function fight() {
     function playerplasmas() {
         fire_minion.health -= 60;
         player.stamina -= 50;
-        playerplasma.InnerText = "";
     }
     function playerkicks() {
         fire_minion.health -= 10;
@@ -144,16 +158,9 @@ export function fight() {
             Dialogue.style.display = "block";
             fire_minion.health = 0;
         }
+
     }
 }
-
-setInterval(() => {
-    playerhealth2.innerText = "Health: " + player.health;
-    health.innerText = "Health: " + player.health;
-    PlayerStamina1.innerText = "Stamina: " + player.stamina;
-    PlayerStamina2.innerText = "Stamina: " + player.stamina;
-}, 100);
-
 export function shadowfigure() {
     shadow_figure.health = 40;
     playerhealth2.innerText = "Health: " + player.health;
@@ -263,6 +270,7 @@ export function shadowfigure() {
                 PrisonDialogue();
                 player.health = 100;
                 player.stamina = 100;
+                // exit the function
             }
         }
     }
@@ -274,10 +282,9 @@ export function shadowfigure() {
             Dialogue.style.display = "block";
             shadow_figure.health = 0;
         }
+
     }
 }
-// shadow goblin
-
 export function shadowgoblin() {
     shadow_goblin.health = 200;
     playerhealth2.innerText = "Health: " + player.health;
