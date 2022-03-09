@@ -11,6 +11,7 @@ export let player = {
     attack: 15,
     Money: 0,
     fighting: false,
+    inventory: [],
 }
 // calling the HTML elements
 export const textdialogue = document.getElementById('container');

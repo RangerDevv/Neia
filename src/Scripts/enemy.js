@@ -1,30 +1,23 @@
-export const fire_minion = {
+export let fire_minion = {
     name: "Fire Minion",
     health: 30,
     maxHealth: 30,
     attack: 20,
 }
 
-export const shadow_figure = {
+export let shadow_figure = {
     name: "Shadow Figure",
     health: 40,
     maxHealth: 40,
     attack: 25,
 }
 
-export const shadow_goblin = {
+export let shadow_goblin = {
     name: "Shadow Goblin",
     health: 200,
     maxHealth: 200,
     attack: 60,
 }
-
-setTimeout(() => {
-    playerhealth2.innerText = "Health: " + player.health;
-    health.innerText = "Health: " + player.health;
-    PlayerStamina1.innerText = "Stamina: " + player.stamina;
-    PlayerStamina2.innerText = "Stamina: " + player.stamina;
-}, 100);
 // get the player
 import {player,textdialogue,choiceA, playerattack, playerdefend, playerheal, Playerchoice, FightScene, Dialogue, enemyhealth, PrisonDialogue, FightDialogue, playerkick, playerplasma, PlayerStamina1 , PlayerStamina2, playerhealth2} from './game.js';
 
