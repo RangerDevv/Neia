@@ -342,6 +342,7 @@ function hotel() {
                             textdialogue.innerText = "The manager turns himself into a black goblin who seems extremely angry. He attacks you.";
                             choiceA.innerText = "Fight";
                             choiceA.onclick = function() {
+                                textdialogue.innerText = "You wake up, good thing it was just a dream";
                                 enemy.shadowgoblin();
                             }
                         }
@@ -350,4 +351,8 @@ function hotel() {
             }
         }
     }
+}
+
+function forest() {
+    
 }
