@@ -343,6 +343,42 @@ function hotel() {
                             choiceA.innerText = "Fight";
                             choiceA.onclick = function() {
                                 textdialogue.innerText = "You wake up, good thing it was just a dream";
+                                choiceA.innerText = "Continue";
+                                choiceB.innerText = "";
+                                choiceA.onclick = function() {
+                                    textdialogue.innerText = "The manager opens the door for you (this time for real). You are now outside the hotel. You see a person should you talk to him?";
+                                    choiceA.innerText = "Talk to the person";
+                                    choiceB.innerText = "Ignore the person";
+                                    choiceC.innerText = "";
+                                    choiceD.innerText = "";
+                                    choiceA.onclick = function() {
+                                        textdialogue.innerText = "Person: Hello there hooman, I have seen you somewhere. I dont remomber you though.";
+                                        choiceA.innerText = "Continue";
+                                        choiceB.innerText = "";
+                                        choiceA.onclick = function() {
+                                            textdialogue.innerText = " Anywayz, I am on a journey to find the secret hidden super duper rare red sus unicorn. If you find it please capture it. I wont reward you if you find the secret hidden super duper rare red sus unicorn but here is a small reward for talking to me.";
+                                            choiceA.innerText = "Okay Thanks!";
+                                            choiceB.innerText = "";
+                                            choiceA.onclick = function() {
+                                                textdialogue.innerText = "You have been rewarded with a small amount of Money.";
+                                                player.Money = player.Money + 5;
+                                                choiceA.innerText = "Continue";
+                                                choiceB.innerText = "";
+                                                choiceA.onclick = function() {
+                                                    forest();
+                                                }
+                                            }
+                                        }
+                                    }
+                                    choiceB.onclick = function() {
+                                        textdialogue.innerText = "You wave to the person and he waves back. You now enter the forest.";
+                                        choiceA.innerText = "Enter the forest";
+                                        choiceB.innerText = "";
+                                        choiceA.onclick = function() {
+                                            forest();
+                                        }
+                                    }
+                                }
                                 enemy.shadowgoblin();
                             }
                         }
@@ -354,5 +390,5 @@ function hotel() {
 }
 
 function forest() {
-    
+    textdialogue.innerText = "You are now in the forest. ";
 }
