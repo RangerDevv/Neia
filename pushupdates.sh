@@ -1,5 +1,5 @@
 #bin/bash
 
 git add .
-git commit -m "added a file update thing"
+git commit -m "E"
 git push 
