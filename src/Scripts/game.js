@@ -11,7 +11,6 @@ export var player = {
     level: 1,
     attack: 15,
     Money: 0,
-    fighting: false,
     inventory: [],
 }
 // calling the HTML elements
@@ -144,6 +143,7 @@ function SewersDialogue() {
                 choiceB.innerText = "Run";
                 choiceA.onclick = function() {
                     //initiate the fight
+                    fireminionenemy.fire_minion.health = fireminionenemy.fire_minion.maxHealth;
                     fireminionenemy.fireminion();
                     FightScene.style.display = "block";
                     player.level = player.level + 1;
@@ -295,6 +295,7 @@ function outsidebattle() {
                     textdialogue.innerText = "You fight the shadow. You are able to kill it.";
                     choiceA.innerText = "Continue";
                     choiceB.innerText = "";
+                    shadowfigureenemy.shadow_figure.health = shadowfigureenemy.shadow_figure.maxHealth;
                     shadowfigureenemy.shadowfigure();
                     FightScene.style.display = "block";
                     choiceA.onclick = function() {
@@ -345,6 +346,7 @@ function hotel() {
                             textdialogue.innerText = "The manager turns himself into a black goblin who seems extremely angry. He attacks you.";
                             choiceA.innerText = "Fight";
                             choiceA.onclick = function() {
+                                shadowgoblinenemy.shadowgoblin();
                                 textdialogue.innerText = "You wake up, good thing it was just a dream";
                                 choiceA.innerText = "Continue";
                                 choiceB.innerText = "";
@@ -382,7 +384,6 @@ function hotel() {
                                         }
                                     }
                                 }
-                                shadowgoblinenemy.shadowgoblin();
                             }
                         }
                     }
@@ -393,5 +394,112 @@ function hotel() {
 }
 
 function forest() {
-    textdialogue.innerText = "You are now in the forest. ";
+    textdialogue.innerText = "You are now in the forest. There are many trees and bushes. You see a small cave in the distance.";
+    choiceA.innerText = "Enter the cave";
+    choiceB.innerText = "Continue";
+    choiceC.innerText = "";
+    choiceD.innerText = "";
+    choiceA.onclick = function() {
+        textdialogue.innerText = "You enter the cave. It smells really sus in here";
+        choiceA.innerText = "Continue";
+        choiceB.innerText = "";
+        choiceA.onclick = function() {
+            textdialogue.innerText = "You see a small light in the distance. You walk towards it. Its something red and has a horn(?)";
+            choiceA.innerText = "Continue";
+            choiceB.innerText = "";
+            choiceA.onclick = function() {
+                textdialogue.innerText = "Its the super duper rare red sus unicorn. You capture it and manage to get the secret hidden super duper rare red sus unicorn. [Super duper rare red sus unicorn has been added to your inventory!]";
+                // add the unicorn to the inventory
+                player.inventory.push('unicorn');
+                choiceA.innerText = "Continue";
+                choiceB.innerText = "";
+                choiceA.onclick = function() {
+                    
+                }
+            }
+        }
+    }
+    choiceB.onclick = function() {
+        textdialogue.innerText = "You see a small shop in the distance. You walk towards it. It is a small shop with a sign that says 'The Sussy shop'.";
+        choiceA.innerText = "Buy something";
+        choiceB.innerText = "Continue";
+        choiceA.onclick = function() {
+            if (player.Money >= 5) {
+                textdialogue.innerText = "ShopOwner: Howdy hooman, what can I get for you?";
+                choiceA.innerText = "Apple: +15 Stamina Price: 5";
+                choiceB.innerText = "Pineapple: +20 HP Price: 10";
+                choiceC.innerText = "Polished Sword: +10 Slash Price: 15";
+                choiceD.innerText = "Pretty Sword: +1 Slash Price: 10000000000";
+                choiceA.onclick = function() {
+                    textdialogue.innerText = "You buy an apple. You feel a bit stronger.";
+                    player.Stamina = player.Stamina + 15;
+                    console.log(player.Stamina);
+                    choiceA.innerText = "Continue";
+                    choiceB.innerText = "";
+                    choiceC.innerText = "";
+                    choiceD.innerText = "";
+                    choiceA.onclick = function() {
+                        forestcontinuation();
+                    }
+                }
+                choiceB.onclick = function() {
+                    textdialogue.innerText = "You buy a pineapple. You feel a bit healthier.";
+                    player.HP = player.HP + 20;
+                    console.log(player.HP);
+                    choiceA.innerText = "Continue";
+                    choiceB.innerText = "";
+                    choiceC.innerText = "";
+                    choiceD.innerText = "";
+                    choiceA.onclick = function() {
+                        forestcontinuation();
+                    }
+                }
+                choiceC.onclick = function() {
+                    textdialogue.innerText = "You buy a polished sword. You feel a bit stronger.";
+                    player.Slash = player.attack + 10;
+                    console.log(player.Slash);
+                    choiceA.innerText = "Continue";
+                    choiceB.innerText = "";
+                    choiceC.innerText = "";
+                    choiceD.innerText = "";
+                    choiceA.onclick = function() {
+                        forestcontinuation();
+                    }
+                }
+                choiceD.onclick = function() {
+                textdialogue.innerText = "You buy a pretty sword. You feel a bit scammed.";
+                player.Slash = player.attack + 1;
+                choiceA.innerText = "Continue";
+                choiceB.innerText = "";
+                choiceC.innerText = "";
+                choiceD.innerText = "";
+                choiceA.onclick = function() {
+                    forestcontinuation();
+                }
+            }
+            }
+            else {
+                textdialogue.innerText = "ShopOwner: You dont have enough money for that.";
+                choiceA.innerText = "Continue";
+                choiceB.innerText = "";
+                choiceC.innerText = "";
+                choiceD.innerText = "";
+                choiceA.onclick = function() {
+                    forestcontinuation();
+                }
+            }
+        }
+        choiceB.onclick = function() {
+            textdialogue.innerText = "You ignore the shop and continue on your way.";
+            choiceA.innerText = "Continue";
+            choiceB.innerText = "";
+            choiceA.onclick = function() {
+                forestcontinuation();
+            }
+        }
+    }
+}
+
+function forestcontinuation() {
+    textdialogue.innerText = "You continue on your way. Its a long day. You see a small town in the distance.";
 }
