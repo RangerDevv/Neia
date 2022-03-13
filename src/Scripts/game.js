@@ -1,7 +1,8 @@
-import * as enemy from './enemy.js';
-
+import * as shadowfigureenemy from './enemies/shadow_figure.js';
+import * as fireminionenemy from './enemies/fire_minion.js';
+import * as shadowgoblinenemy from './enemies/shadow_goblin.js';
 // Player stats
-export let player = {
+export var player = {
     name: "",
     health: 100,
     maxHealth: 100,
@@ -143,7 +144,8 @@ function SewersDialogue() {
                 choiceB.innerText = "Run";
                 choiceA.onclick = function() {
                     //initiate the fight
-                    enemy.fight();
+                    fireminionenemy.fireminion();
+                    FightScene.style.display = "block";
                     player.level = player.level + 1;
                     textdialogue.innerText = "You have defeated the fire minion, you decide its better to go outside. But, you have also leveled up!";
                     choiceA.innerText = "Go outside";
@@ -293,7 +295,8 @@ function outsidebattle() {
                     textdialogue.innerText = "You fight the shadow. You are able to kill it.";
                     choiceA.innerText = "Continue";
                     choiceB.innerText = "";
-                    enemy.shadowfigure();
+                    shadowfigureenemy.shadowfigure();
+                    FightScene.style.display = "block";
                     choiceA.onclick = function() {
                         textdialogue.innerText = "You run away not bothering to look who the shadow was. You exit the alleyway and continue on your way.";
                         choiceA.innerText = "Continue";
@@ -379,7 +382,7 @@ function hotel() {
                                         }
                                     }
                                 }
-                                enemy.shadowgoblin();
+                                shadowgoblinenemy.shadowgoblin();
                             }
                         }
                     }

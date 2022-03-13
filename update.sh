@@ -1,5 +1,5 @@
 #bin/bash
 
 git add .
-git commit -m "Still working on the bug fix"
+git commit -m "Fight system is not fixed yet"
 git push 
