@@ -510,5 +510,16 @@ function forestcontinuation() {
         textdialogue.innerText = "You enter the town. It is a small town with a sign that says 'The Rick Ashley Town'.";
         choiceA.innerText = "Continue";
         choiceB.innerText = "";
+        choiceA.onclick = function() {
+            textdialogue.innerText = "You enter the town you meet the FINAL boss. Rick Ashley himself. There is no choice but to fight"
+            choiceA.innerText = "Fight";
+            choiceB.innerText = "Run";
+            choiceA.onclick = function() {
+                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+            }
+            choiceB.onclick = function() {
+                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+            }
+        }
     }
 }
