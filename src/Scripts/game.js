@@ -502,4 +502,13 @@ function forest() {
 
 function forestcontinuation() {
     textdialogue.innerText = "You continue on your way. Its a long day. You see a small town in the distance.";
+    choiceA.innerText = "Enter the town";
+    choiceB.innerText = "";
+    choiceC.innerText = "";
+    choiceD.innerText = "";
+    choiceA.onclick = function() {
+        textdialogue.innerText = "You enter the town. It is a small town with a sign that says 'The Rick Ashley Town'.";
+        choiceA.innerText = "Continue";
+        choiceB.innerText = "";
+    }
 }
