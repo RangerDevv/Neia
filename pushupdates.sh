@@ -1,5 +1,5 @@
 #bin/bash
 
 git add .
-git commit -m "never gonna give you up never gonna let you down"
+git commit -m "Restarting the entire game because I am bored "
 git push 
