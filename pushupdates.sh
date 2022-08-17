@@ -1,5 +1,5 @@
 #bin/bash
 
 git add .
-git commit -m "Basic stuff "
+git commit -m "update player stats "
 git push 
